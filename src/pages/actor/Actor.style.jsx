@@ -14,7 +14,7 @@ export const StyledActorImg = styled.img`
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
 `;
 export const StyledActorInfoList = styled.ul`
   display: flex;
