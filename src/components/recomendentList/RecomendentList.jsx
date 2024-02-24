@@ -22,7 +22,6 @@ export const RecomendentList = () => {
     // }
     getData("movie/popular", setData);
   }, []);
-  console.log(data);
   return (
     <>
       <StyledList>

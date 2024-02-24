@@ -74,7 +74,6 @@ export const SinglePage = () => {
                 <SingleSpan className="sinle-name">
                   {single.name ? single.name : single.title}
                 </SingleSpan>
-                <SingleIcon adult={single.adult} />
               </SingleInfoItem>
               <SingleInfoItem>
                 <SingleStrong>Date:</SingleStrong>

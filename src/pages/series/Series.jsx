@@ -10,7 +10,6 @@ export const Series = () => {
   useEffect(() => {
     getData("tv/airing_today", setData);
   }, []);
-  console.log(data);
   return (
     <>
       <Container>

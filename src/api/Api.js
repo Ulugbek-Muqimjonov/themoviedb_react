@@ -6,7 +6,7 @@ export const getData = (url,setState) => {
     .get(Base_URL + url, {
       params: {
         api_key: API_KEY,
-        page: 2,
+        page: 1,
       },
     })
     .then((res) => setState(res.data));
