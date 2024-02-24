@@ -5,12 +5,15 @@ import { TokenProvider } from "./context/tokenContext/TokenContext.jsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { GlobalStyle } from "./styles/GlobalStayles.jsx";
+import { SearchContextProvider } from "./context/search/SearchContext.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <TokenProvider>
-        <App />
-        <GlobalStyle/>
+        <SearchContextProvider>
+          <App />
+        </SearchContextProvider>
+        <GlobalStyle />
       </TokenProvider>
     </BrowserRouter>
   </React.StrictMode>

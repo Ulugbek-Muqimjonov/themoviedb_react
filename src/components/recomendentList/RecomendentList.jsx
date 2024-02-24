@@ -6,22 +6,25 @@ import { searchContext } from "../../context/search/SearchContext";
 import axios from "axios";
 
 export const RecomendentList = () => {
-  const { search, setSearch } = useContext(searchContext);
+  const { search} = useContext(searchContext);
   const [data, setData] = useState([]);
   useEffect(() => {
-    // if (search) {
-    //   axios
-    //     .get("https://api.themoviedb.org/3/search/movie?query=" + search, {
-    //       params: {
-    //         api_key: "d229f1a8f01dd6ffcca495220493d39a",
-    //       },
-    //     })
-    //     .then((res) => setData(res.data))
-    //     .catch((err) => console.log(err));
-    // } else {
-    // }
-    getData("movie/popular", setData);
-  }, []);
+    if (search.length) {
+      axios
+        .get("https://api.themoviedb.org/3/search/movie?query=" + search, {
+          params: {
+            api_key: "d229f1a8f01dd6ffcca495220493d39a",
+          },
+        })
+        .then((res) => {
+          setData(res.data);
+          console.log(res.data);
+        })
+        .catch((err) => console.log(err));
+    } else {
+      getData("movie/popular", setData);
+    }
+  }, [search]);
   return (
     <>
       <StyledList>
